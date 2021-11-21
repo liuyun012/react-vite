@@ -1,21 +1,20 @@
-import { Suspense, useState } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
+import React, { FC, useEffect } from 'react';
+import { Button } from '@arco-design/web-react';
+import RouterViews from './routes';
+import './app.less';
 
-
-function App() {
-  const [count, setCount] = useState(0)
+const App: FC = () => {
+  useEffect(() => {
+    console.log(`vite-react-cil`);
+  }, []);
 
   return (
-    <Suspense fallback={<span>loading</span>}>
-      <div>111</div>
-      {/* <Router>
-        <Route key="/home" path="/home" component={Home}></Route>
-        <Route key="/about" path="/about" component={About}></Route>
-      </Router> */}
-    </Suspense>
-  )
-}
+    <div className='App'>
+      <h2>Welcome to vite-react-cil</h2>
+      <Button type='primary'>Primary</Button>
+      {RouterViews}
+    </div>
+  );
+};
 
-export default App
+export default App;
