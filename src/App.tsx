@@ -1,20 +1,21 @@
-import React, { FC, useEffect } from 'react';
-import { Button } from '@arco-design/web-react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import RouterViews from './routes';
-import './app.less';
 
-const App: FC = () => {
-  useEffect(() => {
-    console.log(`vite-react-cil`);
-  }, []);
+const queryClient = new QueryClient();
 
+function App() {
   return (
-    <div className='App'>
-      <h2>Welcome to vite-react-cil</h2>
-      <Button type='primary'>Primary</Button>
-      {RouterViews}
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <RouterViews />
+      </BrowserRouter>
+
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
-};
+}
 
 export default App;
