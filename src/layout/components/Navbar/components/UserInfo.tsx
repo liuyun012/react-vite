@@ -1,10 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Avatar, Typography, Dropdown, Menu } from '@arco-design/web-react';
-import { ReducerState } from '../../redux';
+import { ReducerState } from '@/redux';
+import styles from '../style/index.module.less';
 
 function UserInfo() {
-  const userInfo = useSelector((state: ReducerState) => state.global.userInfo);
+  const userInfo = useSelector((state: ReducerState) => state.global.userInfo) || {};
+
+  function onMenuItemClick() {
+    console.log(11);
+  }
 
   return (
     <div>

@@ -29,7 +29,7 @@ export interface GlobalState {
 const initialState: GlobalState = {
   theme: defaultTheme,
   settings: defaultSettings,
-  userInfo: null
+  userInfo: {}
 };
 
 export default function (state = initialState, action) {

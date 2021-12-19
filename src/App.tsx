@@ -1,8 +1,13 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { ReactQueryDevtools } from 'react-query/devtools';
+// import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClient, QueryClientProvider } from 'react-query';
+
 import RouterViews from './routes';
+import rootReducer from './redux';
+const store = createStore(rootReducer);
 
 const queryClient = new QueryClient();
 
@@ -10,10 +15,13 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <RouterViews />
+        <Provider store={store}>
+          <RouterViews />
+        </Provider>
       </BrowserRouter>
 
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* react-query 开发工具 */}
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 }
