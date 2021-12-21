@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.24.1",
+    "axios": "^0.24.0",
     "immer": "^9.0.6",
+    "qs": "^6.10.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-query": "^3.33.4",
@@ -22,6 +24,7 @@
     "use-immer": "^0.6.0"
   },
   "devDependencies": {
+    "@types/qs": "^6.9.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.3.2",

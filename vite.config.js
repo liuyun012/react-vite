@@ -1,3 +1,10 @@
+/*
+ * @Author: Qzx
+ * @Date: 2021-11-13 17:22:40
+ * @LastEditTime: 2021-12-22 00:07:29
+ * @LastEditors: your name
+ * @Description:
+ */
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -19,7 +26,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@/pages': path.resolve(__dirname, 'src/pages')
+      '@/pages': path.resolve(__dirname, 'src/pages'),
+      '@/utils': path.resolve(__dirname, 'src/utils')
     }
   },
   plugins: [react()]
