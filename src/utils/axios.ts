@@ -1,7 +1,7 @@
 /*
  * @Author: Qzx
  * @Date: 2021-12-20 21:33:59
- * @LastEditTime: 2021-12-21 23:41:43
+ * @LastEditTime: 2021-12-22 21:46:04
  * @LastEditors: your name
  * @Description: axios 请求封装
  */
@@ -64,6 +64,15 @@ function handleCode(code: number, msg: string) {
 function errMsg(err: any) {
   if (err && err.response) {
     switch (err.response.status) {
+      case 400:
+        console.log(err.response.data.error.details);
+        break;
+      case 401:
+        console.log('未授权，请登录');
+        break;
+      case 500:
+        console.log('服务器内部错误');
+        break;
       default:
         console.log(err.response.msg);
     }

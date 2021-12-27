@@ -1,14 +1,17 @@
 /*
  * @Author: Qzx
  * @Date: 2021-12-21 22:30:21
- * @LastEditTime: 2021-12-21 22:43:53
+ * @LastEditTime: 2021-12-22 23:01:42
  * @LastEditors: your name
  * @Description:
  */
 import axios from '@/utils/axios';
 
 // 登录接口
-export function login(data) {
+export interface ILoginParams {
+  key: any;
+}
+export function login(data: ILoginParams) {
   return axios.post('/login', data);
 }
 
