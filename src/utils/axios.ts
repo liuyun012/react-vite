@@ -1,7 +1,7 @@
 /*
  * @Author: Qzx
  * @Date: 2021-12-20 21:33:59
- * @LastEditTime: 2021-12-22 21:46:04
+ * @LastEditTime: 2021-12-28 21:41:18
  * @LastEditors: your name
  * @Description: axios 请求封装
  */
@@ -77,6 +77,27 @@ function errMsg(err: any) {
         console.log(err.response.msg);
     }
   }
+}
+
+/**
+ * 封装get方法
+ * @param url  请求url
+ * @param params  请求参数
+ * @returns {Promise}
+ */
+export function get(url = '', params = {}) {
+  return instance.get(url, { params: params });
+}
+
+/**
+ * 封装post请求
+ * @param url
+ * @param data
+ * @returns {Promise}
+ */
+
+export function post(url = '', data = {}) {
+  return instance.post(url, data);
 }
 
 export default instance;
