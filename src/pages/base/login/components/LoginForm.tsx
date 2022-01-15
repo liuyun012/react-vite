@@ -1,8 +1,8 @@
 /*
  * @Author: Qzx
  * @Date: 2021-12-22 23:48:54
- * @LastEditTime: 2021-12-28 21:42:28
- * @LastEditors: your name
+ * @LastEditTime: 2022-01-15 18:30:32
+ * @LastEditors: Qzx
  * @Description:
  */
 import React, { useEffect, useRef, useState } from 'react';
@@ -13,7 +13,7 @@ import { login as apiLogin } from '@/api/modules/base';
 import styles from '../style/index.module.less';
 
 export default function LoginForm() {
-  const formRef = useRef<FormInstance>(); // 表单对象
+  const formRef: any = useRef<FormInstance>(); // 表单对象
   const [errorMessage, setErrorMessage] = useState(''); // 报错信息
   const [loading, setLoading] = useState(false); // 接口请求loading
   const [rememberPassword, setRememberPassword] = useState(false); // 是否记住密码
@@ -51,7 +51,7 @@ export default function LoginForm() {
   }
 
   function onSubmitClick() {
-    formRef?.current?.validate().then((values) => {
+    formRef?.current?.validate().then((values: any) => {
       fetchLogin(values);
     });
   }

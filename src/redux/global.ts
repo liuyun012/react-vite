@@ -1,3 +1,10 @@
+/*
+ * @Author: Qzx
+ * @Date: 2021-11-24 22:26:32
+ * @LastEditTime: 2022-01-15 18:28:24
+ * @LastEditors: Qzx
+ * @Description:
+ */
 import defaultSettings from '../settings.json';
 
 const defaultTheme = localStorage.getItem('arco-theme') || 'light';
@@ -29,10 +36,13 @@ export interface GlobalState {
 const initialState: GlobalState = {
   theme: defaultTheme,
   settings: defaultSettings,
-  userInfo: {}
+  userInfo: {
+    name: 'qzx',
+    avatar: 'https://lf1-xgcdn-tos.pstatp.com/obj/vcloud/vadmin/start.8e0e4855ee346a46ccff8ff3e24db27b.png'
+  }
 };
 
-export default function (state = initialState, action) {
+export default function (state = initialState, action: any) {
   switch (action.type) {
     case 'toggle-theme': {
       const { theme } = action.payload;

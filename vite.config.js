@@ -1,13 +1,16 @@
 /*
  * @Author: Qzx
  * @Date: 2021-11-13 17:22:40
- * @LastEditTime: 2021-12-22 00:07:29
- * @LastEditors: your name
+ * @LastEditTime: 2022-01-15 18:20:28
+ * @LastEditors: Qzx
  * @Description:
  */
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import WindiCSS from 'vite-plugin-windicss';
+import reactSvgPlugin from 'vite-plugin-react-svg';
+import vitePluginImp from 'vite-plugin-imp';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,5 +33,5 @@ export default defineConfig({
       '@/utils': path.resolve(__dirname, 'src/utils')
     }
   },
-  plugins: [react()]
+  plugins: [react(), WindiCSS(), reactSvgPlugin(), vitePluginImp({ libList: [] })]
 });

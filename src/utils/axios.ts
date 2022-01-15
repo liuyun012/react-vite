@@ -1,7 +1,7 @@
 /*
  * @Author: Qzx
  * @Date: 2021-12-20 21:33:59
- * @LastEditTime: 2021-12-28 21:41:18
+ * @LastEditTime: 2022-01-15 15:23:39
  * @LastEditors: your name
  * @Description: axios 请求封装
  */
@@ -95,7 +95,6 @@ export function get(url = '', params = {}) {
  * @param data
  * @returns {Promise}
  */
-
 export function post(url = '', data = {}) {
   return instance.post(url, data);
 }
