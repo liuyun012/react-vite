@@ -1,10 +1,11 @@
 {
   "name": "react-vite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
     "serve": "vite preview",
+    "build": "vite build",
+    "analyze": "vite build --debug --mode analyze",
     "prepare": "husky install",
     "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix",
     "stylelint": "stylelint 'src/**/*.less' --fix --cache"
@@ -48,6 +49,7 @@
     "lint-staged": "^12.0.2",
     "postcss-less": "^6.0.0",
     "prettier": "^2.4.1",
+    "rollup-plugin-visualizer": "^5.5.4",
     "stylelint": "^14.1.0",
     "stylelint-config-css-modules": "^2.3.0",
     "stylelint-config-standard": "^24.0.0",
@@ -56,6 +58,7 @@
     "vite": "^2.6.4",
     "vite-plugin-imp": "^2.1.3",
     "vite-plugin-react-svg": "^0.2.0",
+    "vite-plugin-style-import": "^1.4.1",
     "vite-plugin-windicss": "^1.6.2"
   },
   "lint-staged": {
